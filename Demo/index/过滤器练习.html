@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <style>
+        .orderColor{
+            color: red;
+        }
+    </style>
+</head>
+
+<body ng-app="product">
+
+    <!--firstController为定义的控制器的方法名-->
+    <div class="container" ng-controller="productController">
+        
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" ng-model="search.id" class="form-control" placeholder="搜索">
+                        </div>
+                    </form>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+      
+        <table class="table">
+            <thead>
+                <th ng-click="changOrder('id')" ng-class="{dropup:order ===''}">
+                     产品编号
+                    <span ng-class="{orderColor:orderType==='id'}" class="caret"></span>
+                </th>
+                <th ng-click="changOrder('name')" ng-class="{dropup:order ===''}"> 
+                    产品名字
+                    <span ng-class="{orderColor:orderType==='name'}" class="caret"></span>
+                </th>
+                <th ng-click="changOrder('price')" ng-class="{dropup:order ===''}"> 
+                    产品单价
+                    <span ng-class="{orderColor:orderType==='price'}" class="caret"></span>
+                </th>
+            </thead>
+            <tbody>
+                <!--全局模糊搜索-->
+                <!--<tr ng-repeat="all in productData | filter:search">-->
+                <!--只对id进行模糊搜索-->
+                <!--<tr ng-repeat="all in productData | filter:{id:search}">-->
+                    <tr ng-repeat="all in productData | filter:search | orderBy:order + orderType">
+                    <td>
+                        {{all.id}}
+                    </td>
+                    <td>
+                        {{all.name}}
+                    </td>
+                    <td>
+                        {{all.price | currency:'(rmb)'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="../angular/angular.min.js"></script>
+    <script type="text/javascript" src="../angular/test8.js"></script>
+</body>
+
+</html>

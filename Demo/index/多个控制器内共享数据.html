@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body ng-app="app">
+
+    <!--firstController为定义的控制器的方法名-->
+    <div ng-controller="firstController">
+        first-data:<input type="text" value="" ng-model="data.name" />
+        first-Data:<input type="text" value="" ng-model="Data.message" />
+        <p>
+            first-name:{{data.name}}
+        </p>
+        <p>
+            first-message:{{Data.message}}
+        </p>
+    </div>
+    <div>
+        <!--secondController为定义的控制器的方法名-->
+
+        <div ng-controller="secondController">
+            <p>
+                second-name:{{data.name}}
+            </p>
+            <p>
+                second-message:{{Data.message}}
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../angular/angular.min.js"></script>
+    <script type="text/javascript" src="../angular/test6.js"></script>
+</body>
+
+</html>

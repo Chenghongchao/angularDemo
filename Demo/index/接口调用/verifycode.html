@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取手机验证码</title>
+</head>
+<body ng-app="code" >
+<div ng-controller="codecontroller">
+    <input type="text"  ng-model="phone"/>
+    <input type="text" ng-model="msg"/>
+    <input type="button" ng-click="comits(phone)"value="提交"/>
+</div>
+<script type="text/javascript" src="../../angular/angular.min.js"></script>
+<script type="text/javascript" src="../../index/接口调用/verifycode.js"></script>
+</body>
+</html>

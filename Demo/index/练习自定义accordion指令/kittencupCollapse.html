@@ -1,0 +1,14 @@
+<div class="panel panel-default" ng-click="changeOpen()">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a href="#">
+          {{heading}}
+        </a>
+      </h4>
+    </div>
+    <div class="panel-collapse" ng-class="{collapse:!isOpen}">
+      <div class="panel-body" ng-transclude>
+       
+      </div>
+    </div>
+  </div>

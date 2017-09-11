@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="app">
+   <div >
+                         <!--firstController为定义的控制器的方法名-->
+       <div ng-controller="firstController">
+          <input type="text" value="" ng-model="name"/>
+                            <!--//secondController为定义的控制器的方法名-->
+          <div ng-controller="secondController">
+                <input type="text" value="" ng-model="name"/>
+          </div>
+
+       </div>
+   </div>
+   <script type="text/javascript" src="../angular/angular.min.js"></script>
+   <script type="text/javascript" src="../angular/test.js"></script>
+ </body>
+</html>

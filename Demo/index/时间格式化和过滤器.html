@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div ng-app="app">
+        <!--firstController为定义的控制器的方法名-->
+        <div ng-controller="firstController">
+            <!--limitTo后面的参数3表示的是要显示数组里多少个元素，如果为负号那么就是从右往左数多少位-->
+            {{[1,2,3,4,5,6,7] | limitTo:3}}</br>
+            {{[1,2,3,4,5,6,7] | limitTo:-3}}</br>
+            <!--小写转换-->
+            {{data.message| lowercase}}</br>
+            <!--大写转换-->
+            {{data.message| uppercase}}</br>
+            <!--搜索字符串里含有filter中字符串的所有属性(只能匹配value值)-->
+            {{data.city| filter:'上海'}}</br>
+            <!--匹配value里面的c,相当于模糊查询-->
+            {{data.city| filter:'h'}}</br>
+            <!--按照name排序,默认顺序是正序 asc a~z -->
+            {{data.city| orderBy:'name'}}</br>
+            <!--按照name排序,反序  -->
+            {{data.city| orderBy:'-name'}}</br>
+            <!--控制器里的过滤器-->
+             {{data.city| filter:checkName}}</br>
+            
+            
+            
+            <!--每3个数就会加上，号123，456，789-->
+            {{123456789|number}}</br>
+            <!--12,345.679-->
+            {{12345.6789|number:3}}</br>
+            <!--$999,999.00-->
+            {{999999|currency}}</br>
+            <!--rmb999,999.00-->
+            {{999999|currency:'rmb'}}</br>
+
+            <!--时间格式的转换-->
+            <!--"2016-04-20T03:58:14.047Z"-->
+            {{today}}</br>
+            <!--Apr 20, 2016 11:57:28 AM-->
+            medium：{{today | date:'medium'}}</br>
+            <!--4/20/16 12:00 PM-->
+            short：{{today | date:'short'}}</br>
+            <!--Wednesday, April 20, 2016-->
+            fullDate：{{today | date:'fullDate'}}</br>
+            <!--April 20, 2016-->
+            longDate：{{today | date:'longDate'}}</br>
+            <!--Apr 20, 2016-->
+            mediumDate：{{today | date:'mediumDate'}}</br>
+            <!--4/20/16-->
+            shortDate：{{today | date:'shortDate'}}</br>
+            <!--12:00:09 PM-->
+            mediumTime：{{today | date:'mediumTime'}}</br>
+            <!--12:01 PM-->
+            shortTime：{{today | date:'shortTime'}}</br>
+            <!--year：2016 16 2016 -->
+            year：{{today |date :'y'}}
+                {{today |date :'yy'}} 
+                {{today |date :'yyyy'}}
+            </br>
+            <!--month: 4 04 Apr Apri-->
+            month: {{today|date:'M'}}
+             {{today|date:'MM'}} 
+             {{today|date:'MMM'}} 
+             {{today|date:'MMMM'}}
+            </br>
+            <!--哪一天-->
+             day:{{today|date:'d'}}
+             Day inmonth {{today|date:'dd'}}
+             Day in week {{today|date:'EEEE'}}
+             {{today|date:'EEE'}}
+             </br>
+             <!--时间-->
+             hour:
+             {{today|date:'HH'}}
+             {{today|date:'H'}}
+             {{today|date:'hh'}}
+             {{today|date:'h'}}
+              </br>
+             <!--分-->
+             minute:
+             {{today|date:'mm'}}
+             {{today|date:'m'}}
+              </br>
+             <!--秒-->
+              second:
+             {{today|date:'ss'}}
+             {{today|date:'s'}}
+             {{today|date:'.sss'}}
+             
+             
+             </br>
+             <!--格式化日期-->
+             {{today |date :'y-M-d H:m:s'}}
+        </div>
+    </div>
+    <script type="text/javascript" src="../angular/angular.min.js"></script>
+    <script type="text/javascript" src="../angular/test7.js"></script>
+</body>
+
+</html>

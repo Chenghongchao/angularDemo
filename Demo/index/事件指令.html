@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body >
+   <div ng-app="app" ng-controller="firstController">
+        <p> {{1+1}}</p>
+        <p ng-bind="1+1">2</p>
+        <p ng-bind-template="{{1+1}}">2</p>
+        <!--是否有class是由boolean类型来判断-->
+        <ul ng-class="{red:status}" ng-init="cityarr=['伤害','北京','杭州']">
+            <li ng-repeat="city in cityarr" ng-class-even="'偶数'" ng-class-odd="'奇数'">
+                <span>
+                    index:{{$index}}
+                </span>
+                 <span>
+                    first:{{$first}}
+                </span>
+                 <span>
+                    middle:{{$middle}}
+                </span>
+                 <span>
+                    last:{{$last}}
+                </span>
+                <span>
+                   {{$city}}
+                </span>
+            </li>
+        </ul>
+        <div >
+             <button ng-click="changestatus($event)" ng-class="">切换状态</button>
+        <p>{{status}}</p>
+        <!--ng-show显示-->
+        <div ng-style="{{defaultStype}}" ng-show="status">
+            ng-style
+        </div>
+        
+        
+        <ul ng-switch on="status">
+            <li ng-switch-when="true">
+                true
+            </li>
+            <li ng-switch-when="false">
+                false
+            </li>
+        </ul>
+         <img ng-src="{{src}}" alt="图片"/>
+        </div>
+       
+   </div>
+   <script type="text/javascript" src="../angular/angular.js"></script>
+   <script type="text/javascript" src="../angular/test12.js"></script>
+ </body>
+</html>

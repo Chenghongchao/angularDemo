@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="app">
+   <div >
+                         <!--firstController为定义的控制器的方法名-->
+       <div ng-controller="firstController">
+            <ul>
+                   <!--<li ng-repeat="user in data | filterAge">-->
+                   <li ng-repeat="user in data | filtercity">
+                       {{user.name}}
+                       {{user.age}}
+                       {{user.city}}
+                   </li>
+            </ul>  
+       </div>
+   </div>
+   <script type="text/javascript" src="../angular/angular.min.js"></script>
+   <script type="text/javascript" src="../angular/test9.js"></script>
+ </body>
+</html>
